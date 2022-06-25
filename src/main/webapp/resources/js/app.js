@@ -68,6 +68,8 @@ document.addEventListener("DOMContentLoaded", function() {
   document.querySelectorAll(".form-group--dropdown select").forEach(el => {
     new FormSelect(el);
   });
+  console.log(document.querySelectorAll(".form-group--dropdown select"));
+
 
   /**
    * Hide elements when clicked on document
@@ -163,7 +165,58 @@ document.addEventListener("DOMContentLoaded", function() {
       this.$stepInstructions[0].parentElement.parentElement.hidden = this.currentStep >= 5;
       this.$step.parentElement.hidden = this.currentStep >= 5;
 
-      // TODO: get data from inputs and show them in summary
+      // SUMMARY
+
+      //summaryDonation
+      let summaryDonation;
+      let donationQuantity = this.$form.querySelector('#quantity').value;
+      summaryDonation = donationQuantity + " worki a w nich: ";
+
+      let queryAllCategories = this.$form.querySelectorAll('.category');
+      queryAllCategories.forEach(el=> {
+        let children = el.children;
+        if (children[0].checked===true){
+          summaryDonation += children[children.length-1].innerText + "; ";}
+      });
+      this.$form.querySelector('.summary-donation').innerText=summaryDonation;
+
+      //institution
+      let chosenInstitution;
+      let queryAllInstitutions = this.$form.querySelectorAll('.institution');
+      queryAllInstitutions.forEach(el=> {
+        let children = el.children;
+        if (children[0].checked===true){
+          chosenInstitution = children[children.length-1].innerText ;}
+      });
+      this.$form.querySelector('.summary-institution').innerText=chosenInstitution;
+
+      //adres
+
+      let summaryAdresNodes = this.$form.querySelector('.summary-adres').children;
+
+      let street = this.$form.querySelector('#street').value;
+      let city = this.$form.querySelector('#city').value;
+      let zipCode = this.$form.querySelector('#zipCode').value;
+      let phoneNo = this.$form.querySelector('#phoneNo').value;
+
+      summaryAdresNodes[0].innerText = street;
+      summaryAdresNodes[1].innerText = city;
+      summaryAdresNodes[2].innerText = zipCode;
+      summaryAdresNodes[3].innerText = phoneNo;
+
+      //pickup date
+      let pickupAdresNodes = this.$form.querySelector('.summary-pickup').children;
+
+      let pickUpDate = this.$form.querySelector('#pickUpDate').value;
+      let pickUpTime = this.$form.querySelector('#pickUpTime').value;
+      let pickUpComment = this.$form.querySelector('#pickUpComment').value;
+
+      pickupAdresNodes[0].innerText = pickUpDate;
+      pickupAdresNodes[1].innerText = pickUpTime;
+      pickupAdresNodes[2].innerText = pickUpComment;
+
+
+
     }
 
   }

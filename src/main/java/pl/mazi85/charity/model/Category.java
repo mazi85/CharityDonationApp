@@ -9,7 +9,7 @@ import javax.persistence.*;
 
 @Table(name = "categories")
 @Entity
-@Setter @Getter @ToString(of = "id") @EqualsAndHashCode(of ="id")
+@Setter @Getter @ToString(exclude = "id") @EqualsAndHashCode(of ="id")
 public class Category {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

@@ -5,6 +5,7 @@ import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
 import java.time.LocalDate;
@@ -13,7 +14,7 @@ import java.util.List;
 
 @Table(name = "donations")
 @Entity
-@Setter @Getter @ToString(of = "id") @EqualsAndHashCode(of ="id")
+@Setter @Getter @ToString(exclude = "id") @EqualsAndHashCode(of ="id")
 
 public class Donation {
 
@@ -32,6 +33,8 @@ public class Donation {
     private String street;
     private String city;
     private String zipCode;
+    private String phoneNo;
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private LocalDate pickUpDate;
     private LocalTime pickUpTime;
     private String pickUpComment;

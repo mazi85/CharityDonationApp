@@ -3,6 +3,7 @@ package pl.mazi85.charity.service;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+import pl.mazi85.charity.model.Donation;
 import pl.mazi85.charity.repository.DonationRepository;
 
 @Service
@@ -19,5 +20,10 @@ public class DefaultDonationService implements DonationService{
     @Override
     public Long allItemsInDonations() {
         return donationRepository.findAllByQuantityAndSum();
+    }
+
+    @Override
+    public Donation saveDonation(Donation donation) {
+        return donationRepository.save(donation);
     }
 }

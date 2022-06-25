@@ -11,10 +11,28 @@
 <%--end of head--%>
 
 <body>
+<header class="header--main-page">
+    <nav class="container container--70">
+        <ul class="nav--actions">
+            <li><a href="" class="btn btn--small btn--without-border">Zaloguj</a></li>
+            <li><a href="#" class="btn btn--small btn--highlighted">Załóż konto</a></li>
+        </ul>
 
-<%--header--%>
-<jsp:include page="fragments/header.jsp"/>
-<%--end of header--%>
+        <%--upperMenu--%>
+        <jsp:include page="fragments/upperMenu.jsp"/>
+        <%--end of upperMenu--%>
+    </nav>
+
+    <div class="slogan container container--90">
+        <div class="slogan--item">
+            <h1>
+                Zacznij pomagać!<br/>
+                Oddaj niechciane rzeczy w zaufane ręce
+            </h1>
+        </div>
+    </div>
+</header>
+
 
 
 
@@ -97,31 +115,6 @@
                 </c:forEach>
                 </li>
             </c:forEach>
-
-<%--            <li>--%>
-<%--                <div class="col">--%>
-<%--                    <div class="title">Fundacja "Dbam o Zdrowie"</div>--%>
-<%--                    <div class="subtitle">Cel i misja: Pomoc dzieciom z ubogich rodzin.</div>--%>
-<%--                </div>--%>
-
-<%--                <div class="col">--%>
-<%--                    <div class="title">Fundacja "A kogo"</div>--%>
-<%--                    <div class="subtitle">Cel i misja: Pomoc wybudzaniu dzieci ze śpiączki.</div>--%>
-<%--                </div>--%>
-<%--            </li>--%>
-
-<%--            <li>--%>
-<%--                <div class="col">--%>
-<%--                    <div class="title">Fundacja “Dla dzieci"</div>--%>
-<%--                    <div class="subtitle">Cel i misja: Pomoc osobom znajdującym się w trudnej sytuacji życiowej.</div>--%>
-<%--                </div>--%>
-<%--                <div class="col">--%>
-<%--                    <div class="title">Fundacja “Bez domu”</div>--%>
-<%--                    <div class="subtitle">Cel i misja: Pomoc dla osób nie posiadających miejsca zamieszkania</div>--%>
-<%--                </div>--%>
-
-<%--            </li>--%>
-
         </ul>
     </div>
 

@@ -9,7 +9,7 @@ import javax.persistence.*;
 
 @Table(name = "institutions")
 @Entity
-@Setter @Getter @ToString(of = "id") @EqualsAndHashCode(of ="id")
+@Setter @Getter @ToString(exclude = "id") @EqualsAndHashCode(of ="id")
 
 public class Institution {
 
