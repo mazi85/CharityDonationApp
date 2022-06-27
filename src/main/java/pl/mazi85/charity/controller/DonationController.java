@@ -9,14 +9,10 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import pl.mazi85.charity.model.Category;
 import pl.mazi85.charity.model.Donation;
-import pl.mazi85.charity.model.Institution;
-import pl.mazi85.charity.service.CategoryService;
-import pl.mazi85.charity.service.DonationService;
-import pl.mazi85.charity.service.InstitutionService;
-
-import java.util.List;
+import pl.mazi85.charity.service.interfaces.CategoryService;
+import pl.mazi85.charity.service.interfaces.DonationService;
+import pl.mazi85.charity.service.interfaces.InstitutionService;
 
 @Controller
 @RequiredArgsConstructor

@@ -1,4 +1,4 @@
-package pl.mazi85.charity.service;
+package pl.mazi85.charity.service.interfaces;
 
 
 import pl.mazi85.charity.model.Category;

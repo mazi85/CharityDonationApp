@@ -5,7 +5,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import pl.mazi85.charity.model.User;
-import pl.mazi85.charity.service.UserService;
+import pl.mazi85.charity.service.interfaces.UserService;
 
 
 @Controller

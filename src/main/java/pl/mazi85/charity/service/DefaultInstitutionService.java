@@ -4,12 +4,13 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import pl.mazi85.charity.model.Institution;
 import pl.mazi85.charity.repository.InstitutionRepository;
+import pl.mazi85.charity.service.interfaces.InstitutionService;
 
 import java.util.List;
 
 @Service
 @RequiredArgsConstructor
-public class DefaultInstitutionService implements InstitutionService{
+public class DefaultInstitutionService implements InstitutionService {
 
     private final InstitutionRepository institutionRepository;
 

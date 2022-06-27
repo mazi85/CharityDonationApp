@@ -4,12 +4,13 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import pl.mazi85.charity.model.Category;
 import pl.mazi85.charity.repository.CategoryRepository;
+import pl.mazi85.charity.service.interfaces.CategoryService;
 
 import java.util.List;
 
 @Service
 @RequiredArgsConstructor
-public class DefaultCategoryService implements CategoryService{
+public class DefaultCategoryService implements CategoryService {
 
     private final CategoryRepository categoryRepository;
 

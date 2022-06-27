@@ -5,6 +5,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import pl.mazi85.charity.model.User;
 import pl.mazi85.charity.repository.UserRepository;
+import pl.mazi85.charity.service.interfaces.UserService;
 
 @Service
 @RequiredArgsConstructor

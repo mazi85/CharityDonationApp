@@ -5,10 +5,11 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import pl.mazi85.charity.model.Donation;
 import pl.mazi85.charity.repository.DonationRepository;
+import pl.mazi85.charity.service.interfaces.DonationService;
 
 @Service
 @RequiredArgsConstructor
-public class DefaultDonationService implements DonationService{
+public class DefaultDonationService implements DonationService {
 
     private final DonationRepository donationRepository;
 
