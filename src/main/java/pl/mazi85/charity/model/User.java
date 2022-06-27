@@ -1,15 +1,13 @@
 package pl.mazi85.charity.model;
 
-import lombok.EqualsAndHashCode;
-import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
+import lombok.*;
 
 import javax.persistence.*;
 
 @Entity
 @Table(name = "users")
-@Getter @Setter @ToString(exclude = "password") @EqualsAndHashCode(of = "id")
+@Getter @Setter @ToString(exclude = "password") @EqualsAndHashCode(of = "id") @Builder
+@NoArgsConstructor @AllArgsConstructor
 public class User {
 
     @Id
