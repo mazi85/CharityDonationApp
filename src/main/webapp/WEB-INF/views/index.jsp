@@ -13,10 +13,9 @@
 <body>
 <header class="header--main-page">
     <nav class="container container--70">
-        <ul class="nav--actions">
-            <li><a href="" class="btn btn--small btn--without-border">Zaloguj</a></li>
-            <li><a href="#" class="btn btn--small btn--highlighted">Załóż konto</a></li>
-        </ul>
+        <%--login-register-menu--%>
+        <jsp:include page="fragments/login-register-menu.jsp"/>
+        <%--end of login-register-menu-%>
 
         <%--upperMenu--%>
         <jsp:include page="fragments/upperMenu.jsp"/>
@@ -57,6 +56,7 @@
 </section>
 
 <section class="steps">
+    <a id="steps"/>
     <h2>Wystarczą 4 proste kroki</h2>
 
     <div class="steps--container">
@@ -82,9 +82,10 @@
         </div>
     </div>
 
-    <a href="#" class="btn btn--large">Załóż konto</a>
+    <a href="/register" class="btn btn--large">Załóż konto</a>
 </section>
 
+<a id="about-us"/>
 <section class="about-us">
     <div class="about-us--text">
         <h2>O nas</h2>
@@ -96,6 +97,7 @@
     </div>
 </section>
 
+<a id="help"/>
 <section class="help">
     <h2>Komu pomagamy?</h2>
 
@@ -119,7 +121,7 @@
     </div>
 
 </section>
-
+<a id="contact"/>
 <%--footer--%>
 <jsp:include page="fragments/footer.jsp"/>
 <%--end of footer--%>

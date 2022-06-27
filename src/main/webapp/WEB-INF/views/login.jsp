@@ -1,6 +1,3 @@
-<%--
-  wg template Michała
---%>
 <%@ page isELIgnored="false" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
@@ -14,10 +11,9 @@
 <body>
 <header>
     <nav class="container container--70">
-        <ul class="nav--actions">
-            <li><a href="#">Zaloguj</a></li>
-            <li class="highlighted"><a href="#">Załóż konto</a></li>
-        </ul>
+        <%--login-register-menu--%>
+        <jsp:include page="fragments/login-register-menu.jsp"/>
+        <%--end of login-register-menu-%>
 
         <%--upperMenu--%>
         <jsp:include page="fragments/upperMenu.jsp"/>

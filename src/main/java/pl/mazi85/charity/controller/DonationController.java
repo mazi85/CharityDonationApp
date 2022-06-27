@@ -2,6 +2,7 @@ package pl.mazi85.charity.controller;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -29,9 +30,12 @@ public class DonationController {
 
     @GetMapping
     public String formView(Model model) {
+
+        String username = SecurityContextHolder.getContext().getAuthentication().getName();
         model.addAttribute("categories", categoryService.allCategories());
         model.addAttribute("institutions", institutionService.institutionsList());
         model.addAttribute("donation", new Donation());
+        model.addAttribute("username",username);
         return "form";
     }
 

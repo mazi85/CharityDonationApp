@@ -14,16 +14,9 @@
 <body>
 <header class="header--form-page">
     <nav class="container container--70">
-        <ul class="nav--actions">
-            <li class="logged-user">
-                Witaj Agata
-                <ul class="dropdown">
-                    <li><a href="#">Profil</a></li>
-                    <li><a href="#">Moje zbiórki</a></li>
-                    <li><a href="#">Wyloguj</a></li>
-                </ul>
-            </li>
-        </ul>
+        <%--logged-menu--%>
+        <jsp:include page="fragments/logged-menu.jsp"/>
+        <%--end of logged-menu--%>
 
         <%--upperMenu--%>
         <jsp:include page="fragments/upperMenu.jsp"/>

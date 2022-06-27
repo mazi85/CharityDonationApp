@@ -13,10 +13,9 @@
 <body>
 <header>
     <nav class="container container--70">
-        <ul class="nav--actions">
-            <li><a href="#">Zaloguj</a></li>
-            <li class="highlighted"><a href="#">Załóż konto</a></li>
-        </ul>
+        <%--login-register-menu--%>
+        <jsp:include page="fragments/login-register-menu.jsp"/>
+        <%--end of login-register-menu-%>
 
         <%--upperMenu--%>
         <jsp:include page="fragments/upperMenu.jsp"/>
