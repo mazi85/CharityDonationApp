@@ -1,13 +1,12 @@
-<%--
-  wg template Michała
---%>
+
 <%@ page isELIgnored="false" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
     <!-- Sidebar - Brand -->
-    <a class="sidebar-brand d-flex align-items-center justify-content-center" href="${pageContext.request.contextPath}/users/list">
+    <a class="sidebar-brand d-flex align-items-center justify-content-center" href="${pageContext.request.contextPath}/admin/users/list">
         <div class="sidebar-brand-icon rotate-n-15">
             <i class="fas fa-laugh-wink"></i>
         </div>
@@ -19,7 +18,7 @@
 
     <!-- Nav Item - Dashboard -->
     <li class="nav-item active">
-        <a class="nav-link" href="${pageContext.request.contextPath}/users/list">
+        <a class="nav-link" href="${pageContext.request.contextPath}admin/users/list">
             <i class="fas fa-fw fa-tachometer-alt"></i>
             <span>Lista użytkowników</span></a>
     </li>

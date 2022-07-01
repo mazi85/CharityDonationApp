@@ -7,6 +7,8 @@ import pl.mazi85.charity.model.User;
 import pl.mazi85.charity.repository.UserRepository;
 import pl.mazi85.charity.service.interfaces.UserService;
 
+import java.util.List;
+
 @Service
 @RequiredArgsConstructor
 public class DefaultUserService implements UserService {
@@ -27,5 +29,10 @@ public class DefaultUserService implements UserService {
         user.setPassword(passwordEncoder.encode(user.getPassword()));
         user.setRole("ADMIN");
         return userRepository.save(user);
+    }
+
+    @Override
+    public List<User> allUsers() {
+        return userRepository.findAll();
     }
 }

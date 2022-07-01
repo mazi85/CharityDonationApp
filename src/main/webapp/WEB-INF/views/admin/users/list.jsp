@@ -1,6 +1,3 @@
-<%--
-  wg template Michała
---%>
 <%@ page isELIgnored="false" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
@@ -19,12 +16,12 @@
     <title>UsersCRUD</title>
 
     <!-- Custom fonts for this template-->
-    <link href="../theme/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link href="<c:url value="/resources/theme/vendor/fontawesome-free/css/all.min.css"/>" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
           rel="stylesheet">
 
     <!-- Custom styles for this template-->
-    <link href="../theme/css/sb-admin-2.min.css" rel="stylesheet">
+    <link href="<c:url value="/resources/theme/css/sb-admin-2.min.css"/>" rel="stylesheet">
 
 </head>
 
@@ -56,9 +53,6 @@
                     <a href="${pageContext.request.contextPath}/users/add" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
                             class="fas fa-download fa-sm text-white-50"></i> Dodaj użytkownika</a>
                 </div>
-<%--                ${pageContext}<br/>--%>
-<%--                ${pageContext.request}<br/>--%>
-<%--                ${pageContext.request.contextPath}<br/>--%>
                 <!-- Table -->
                 <div class="card shadow mb-4">
                     <div class="card-header py-3">
@@ -71,7 +65,8 @@
                                 <tr>
                                     <th>Id</th>
                                     <th>Nazwa użytkownika</th>
-                                    <th>Email</th>
+                                    <th>Imie</th>
+                                    <th>Nazwisko</th>
                                     <th>Akcja</th>
                                 </tr>
                                 </thead>
@@ -79,8 +74,9 @@
                                 <c:forEach items="${allUsers}" var="user">
                                     <tr>
                                         <td>${user.id}</td>
-                                        <td>${user.userName}</td>
-                                        <td>${user.email}</td>
+                                        <td>${user.username}</td>
+                                        <td>${user.name}</td>
+                                        <td>${user.lastName}</td>
                                         <td>
                                             <a class="btn btn-primary lift" href="${pageContext.request.contextPath}/users/delete?id=${user.id}">Usuń</a>
                                             <a class="btn btn-primary lift" href="${pageContext.request.contextPath}/users/edit?id=${user.id}">Edycja</a>
@@ -125,21 +121,21 @@
 <!-- Logout Modal-->
 
 <!-- Bootstrap core JavaScript-->
-<script src="../theme/vendor/jquery/jquery.min.js"></script>
-<script src="../theme/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="<c:url value="/resources/theme/vendor/jquery/jquery.min.js"/>"></script>
+<script src="<c:url value="/resources/theme/vendor/bootstrap/js/bootstrap.bundle.min.js"/>"></script>
 
 <!-- Core plugin JavaScript-->
-<script src="../theme/vendor/jquery-easing/jquery.easing.min.js"></script>
+<script src="<c:url value="/resources/theme/vendor/jquery-easing/jquery.easing.min.js"/>"></script>
 
 <!-- Custom scripts for all pages-->
-<script src="../theme/js/sb-admin-2.min.js"></script>
+<script src="<c:url value="/resources/theme/js/sb-admin-2.min.js"/>"></script>
 
 <!-- Page level plugins -->
-<script src="../theme/vendor/chart.js/Chart.min.js"></script>
+<script src="<c:url value="/resources/theme/vendor/chart.js/Chart.min.js"/>"></script>
 
 <!-- Page level custom scripts -->
-<script src="../theme/js/demo/chart-area-demo.js"></script>
-<script src="../theme/js/demo/chart-pie-demo.js"></script>
+<script src="<c:url value="/resources/theme/js/demo/chart-area-demo.js"/>"></script>
+<script src="<c:url value="/resources/theme/js/demo/chart-pie-demo.js"/>"></script>
 
 </body>
 

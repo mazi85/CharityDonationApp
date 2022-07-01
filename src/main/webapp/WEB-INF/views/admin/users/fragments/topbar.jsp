@@ -1,6 +1,4 @@
-<%--
-  wg template Michała
---%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page isELIgnored="false" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 
@@ -15,6 +13,6 @@
 
     <!-- Topbar Search -->
     <!-- Topbar Navbar -->
-    <a class="btn btn-primary lift" href="${pageContext.request.contextPath}/logout">Wyloguj</a>
+    <a class="btn btn-primary lift" href="<c:url value="/logout"/>">Wyloguj</a>
 
 </nav>
