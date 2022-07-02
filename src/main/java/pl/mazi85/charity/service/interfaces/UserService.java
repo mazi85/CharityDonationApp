@@ -9,4 +9,8 @@ public interface UserService {
     User createAdmin(User user);
 
     List<User> allUsers();
+
+    User findUserById(Long userId);
+
+    User editUser(User user);
 }

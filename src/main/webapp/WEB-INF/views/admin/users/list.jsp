@@ -13,16 +13,11 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>UsersCRUD</title>
+    <title>Users</title>
 
     <!-- Custom fonts for this template-->
-    <link href="<c:url value="/resources/theme/vendor/fontawesome-free/css/all.min.css"/>" rel="stylesheet" type="text/css">
-    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
-          rel="stylesheet">
-
-    <!-- Custom styles for this template-->
-    <link href="<c:url value="/resources/theme/css/sb-admin-2.min.css"/>" rel="stylesheet">
-
+    <jsp:include page="fragments/css-font.jsp"/>
+    <!-- End of Custom fonts for this template-->
 </head>
 
 <body id="page-top">
@@ -49,8 +44,8 @@
 
                 <!-- Page Heading -->
                 <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                    <h1 class="h3 mb-0 text-gray-800">UsersCRUD</h1>
-                    <a href="${pageContext.request.contextPath}/users/add" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
+                    <h1 class="h3 mb-0 text-gray-800">Users</h1>
+                    <a href="${pageContext.request.contextPath}admin/users/add" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
                             class="fas fa-download fa-sm text-white-50"></i> Dodaj użytkownika</a>
                 </div>
                 <!-- Table -->
@@ -67,6 +62,7 @@
                                     <th>Nazwa użytkownika</th>
                                     <th>Imie</th>
                                     <th>Nazwisko</th>
+                                    <th>Zablokowany</th>
                                     <th>Akcja</th>
                                 </tr>
                                 </thead>
@@ -77,12 +73,12 @@
                                         <td>${user.username}</td>
                                         <td>${user.name}</td>
                                         <td>${user.lastName}</td>
+                                        <td>${user.disable}</td>
                                         <td>
-                                            <a class="btn btn-primary lift" href="${pageContext.request.contextPath}/users/delete?id=${user.id}">Usuń</a>
-                                            <a class="btn btn-primary lift" href="${pageContext.request.contextPath}/users/edit?id=${user.id}">Edycja</a>
-                                            <a class="btn btn-primary lift" href="${pageContext.request.contextPath}/users/editPass?id=${user.id}">Hasło</a>
-                                            <a class="btn btn-primary lift" href="${pageContext.request.contextPath}/users/show?id=${user.id}">Pokaż</a>
-
+                                            <a class="btn btn-primary lift" href="${pageContext.request.contextPath}admin/users/delete/${user.id}">Usuń</a>
+                                            <a class="btn btn-primary lift" href="${pageContext.request.contextPath}edit/${user.id}">Edycja</a>
+                                            <a class="btn btn-primary lift" href="${pageContext.request.contextPath}admin/users/block/${user.id}">Zablokuj</a>
+                                            <a class="btn btn-primary lift" href="${pageContext.request.contextPath}admin/users/editPass/${user.id}">Hasło</a>
                                         </td>
                                     </tr>
                                 </c:forEach>
@@ -118,24 +114,9 @@
     <i class="fas fa-angle-up"></i>
 </a>
 
-<!-- Logout Modal-->
-
 <!-- Bootstrap core JavaScript-->
-<script src="<c:url value="/resources/theme/vendor/jquery/jquery.min.js"/>"></script>
-<script src="<c:url value="/resources/theme/vendor/bootstrap/js/bootstrap.bundle.min.js"/>"></script>
-
-<!-- Core plugin JavaScript-->
-<script src="<c:url value="/resources/theme/vendor/jquery-easing/jquery.easing.min.js"/>"></script>
-
-<!-- Custom scripts for all pages-->
-<script src="<c:url value="/resources/theme/js/sb-admin-2.min.js"/>"></script>
-
-<!-- Page level plugins -->
-<script src="<c:url value="/resources/theme/vendor/chart.js/Chart.min.js"/>"></script>
-
-<!-- Page level custom scripts -->
-<script src="<c:url value="/resources/theme/js/demo/chart-area-demo.js"/>"></script>
-<script src="<c:url value="/resources/theme/js/demo/chart-pie-demo.js"/>"></script>
+<jsp:include page="fragments/script.jsp"/>
+<!-- End of Bootstrap core JavaScript -->
 
 </body>
 

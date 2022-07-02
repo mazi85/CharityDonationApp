@@ -1,9 +1,7 @@
-<%--
-  wg template Michała
---%>
 <%@ page isELIgnored="false" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -16,27 +14,20 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>UsersCRUD</title>
+    <title>Users</title>
 
     <!-- Custom fonts for this template-->
-    <link href="../theme/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
-    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
-          rel="stylesheet">
-
-    <!-- Custom styles for this template-->
-    <link href="../theme/css/sb-admin-2.min.css" rel="stylesheet">
-
+    <jsp:include page="fragments/css-font.jsp"/>
+    <!-- End of Custom fonts for this template-->
 </head>
 
 <body id="page-top">
 
 <!-- Page Wrapper -->
 <div id="wrapper">
-
     <!-- Sidebar -->
     <jsp:include page="fragments/sideBar.jsp"/>
     <!-- End of Sidebar -->
-
     <!-- Content Wrapper -->
     <div id="content-wrapper" class="d-flex flex-column">
 
@@ -52,45 +43,36 @@
 
                 <!-- Page Heading -->
                 <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                    <h1 class="h3 mb-0 text-gray-800">UsersCRUD</h1>
-                    <a href="${pageContext.request.contextPath}/users/add" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
+                    <h1 class="h3 mb-0 text-gray-800">Users</h1>
+                    <a href="${pageContext.request.contextPath}admin/users/add" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
                             class="fas fa-download fa-sm text-white-50"></i> Dodaj użytkownika</a>
                 </div>
-<%--                ${pageContext}<br/>--%>
-<%--                ${pageContext.request}<br/>--%>
-<%--                ${pageContext.request.contextPath}<br/>--%>
-                <!-- Form -->
 
+                <!-- Form -->
                 <div class="card shadow mb-4">
                     <div class="card-header py-3">
                         <h6 class="m-0 font-weight-bold text-primary">Edytuj użytkownika</h6>
                     </div>
                     <div class="card-body">
-                        <form action="${pageContext.request.contextPath}/users/edit" method="post">
-
-                            <c:if test="${dataOk==false}">
-                                <div class="alert alert-danger" role="alert">
-                                    Niepoprawne dane
-                                </div>
-                            </c:if>
+                        <form:form action="/admin/users/edit" method="post" modelAttribute="user">
 
                             <div class="form-group">
-                                <label for="InputName">Nazwa</label>
-                                <input type="text" name="name" class="form-control" VALUE="${user.userName}" id="InputName">
+                                <label for="username">Nazwa użytkownika</label>
+                                <form:input type="text" class="form-control" path="username"/>
                             </div>
                             <div class="form-group">
-                                <label for="InputEmail">Email</label>
-                                <input type="email" name="email" class="form-control" id="InputEmail" VALUE="${user.email}">
+                                <label for="name">Imie</label>
+                                <form:input type="text" class="form-control" path="name"/>
                             </div>
-                            <input type="hidden" name="id" value="${user.id}"/>
+                            <div class="form-group">
+                                <label for="lastName">Nazwisko</label>
+                                <form:input type="text" class="form-control" path="lastName"/>
+                            </div>
 
-<%--                            <div class="form-group">--%>
-<%--                                <label for="InputPassword">Hasło</label>--%>
-<%--                                <input type="password" name="password" class="form-control" placeholder="Hasło użytkownika" id="InputPassword">--%>
-<%--                            </div>--%>
+                            <form:input type="hidden" path="id"/>
 
                             <button type="submit" class="btn btn-primary">Edytuj</button>
-                        </form>
+                        </form:form>
                     </div>
                 </div>
                 <!-- Content Row -->
@@ -120,24 +102,9 @@
     <i class="fas fa-angle-up"></i>
 </a>
 
-<!-- Logout Modal-->
-
 <!-- Bootstrap core JavaScript-->
-<script src="../theme/vendor/jquery/jquery.min.js"></script>
-<script src="../theme/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
-<!-- Core plugin JavaScript-->
-<script src="../theme/vendor/jquery-easing/jquery.easing.min.js"></script>
-
-<!-- Custom scripts for all pages-->
-<script src="../theme/js/sb-admin-2.min.js"></script>
-
-<!-- Page level plugins -->
-<script src="../theme/vendor/chart.js/Chart.min.js"></script>
-
-<!-- Page level custom scripts -->
-<script src="../theme/js/demo/chart-area-demo.js"></script>
-<script src="../theme/js/demo/chart-pie-demo.js"></script>
+<jsp:include page="fragments/script.jsp"/>
+<!-- End of Bootstrap core JavaScript -->
 
 </body>
 
