@@ -53,4 +53,9 @@ public class DefaultUserService implements UserService {
         userForEdit.setLastName(user.getLastName());
         return userRepository.save(userForEdit);
     }
+
+    @Override
+    public void deleteUser(Long userId) {
+    userRepository.deleteById(userId);
+    }
 }

@@ -16,15 +16,11 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>UsersCRUD</title>
+    <title>Users</title>
 
     <!-- Custom fonts for this template-->
-    <link href="../theme/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
-    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
-          rel="stylesheet">
-
-    <!-- Custom styles for this template-->
-    <link href="../theme/css/sb-admin-2.min.css" rel="stylesheet">
+    <jsp:include page="fragments/css-font.jsp"/>
+    <!-- End of Custom fonts for this template-->
 
 </head>
 
@@ -56,45 +52,30 @@
                     <a href="${pageContext.request.contextPath}/users/add" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
                             class="fas fa-download fa-sm text-white-50"></i> Dodaj użytkownika</a>
                 </div>
-<%--                ${pageContext}<br/>--%>
-<%--                ${pageContext.request}<br/>--%>
-<%--                ${pageContext.request.contextPath}<br/>--%>
-                <!-- Form -->
 
                 <div class="card shadow mb-4">
                     <div class="card-header py-3">
-                        <h6 class="m-0 font-weight-bold text-primary">Usuń użytkownika</h6>
+                        <h6 class="m-0 font-weight-bold text-primary">Usunąć użytkownika?</h6>
                     </div>
                     <div class="card-body">
                         <div class="table-responsive">
                             <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                                 <tr>
                                     <th>Nazwa użytkownika</th>
-                                    <td><c:out value="${user.userName}"/></td>
                                 </tr>
                                 <tr>
-                                    <th>Email</th>
-                                    <td><c:out value="${user.email}"/></td>
+                                    <td><c:out value="${username}"/></td>
                                 </tr>
                             </table>
                         </div>
 
 
-                        <form action="${pageContext.request.contextPath}/users/delete" method="post">
-                            <input type="hidden" name="id" value="${user.id}"/>
+                        <form method="post">
                             <button type="submit" class="btn btn-primary">USUŃ</button>
                             <button type=button onclick="history.back()" class="btn btn-primary">ANULUJ</button>
                         </form>
                     </div>
                 </div>
-                <!-- Content Row -->
-
-
-                <!-- Content Row -->
-
-
-                <!-- Content Row -->
-
 
             </div>
             <!-- /.container-fluid -->
@@ -114,24 +95,9 @@
     <i class="fas fa-angle-up"></i>
 </a>
 
-<!-- Logout Modal-->
-
 <!-- Bootstrap core JavaScript-->
-<script src="../theme/vendor/jquery/jquery.min.js"></script>
-<script src="../theme/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
-<!-- Core plugin JavaScript-->
-<script src="../theme/vendor/jquery-easing/jquery.easing.min.js"></script>
-
-<!-- Custom scripts for all pages-->
-<script src="../theme/js/sb-admin-2.min.js"></script>
-
-<!-- Page level plugins -->
-<script src="../theme/vendor/chart.js/Chart.min.js"></script>
-
-<!-- Page level custom scripts -->
-<script src="../theme/js/demo/chart-area-demo.js"></script>
-<script src="../theme/js/demo/chart-pie-demo.js"></script>
+<jsp:include page="fragments/script.jsp"/>
+<!-- End of Bootstrap core JavaScript -->
 
 </body>
 
