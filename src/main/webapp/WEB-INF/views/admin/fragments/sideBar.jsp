@@ -6,7 +6,7 @@
 <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
     <!-- Sidebar - Brand -->
-    <a class="sidebar-brand d-flex align-items-center justify-content-center" href="${pageContext.request.contextPath}/admin/users/list">
+    <a class="sidebar-brand d-flex align-items-center justify-content-center" href="/admin/users/list">
         <div class="sidebar-brand-icon rotate-n-15">
             <i class="fas fa-laugh-wink"></i>
         </div>
@@ -18,9 +18,19 @@
 
     <!-- Nav Item - Dashboard -->
     <li class="nav-item active">
-        <a class="nav-link" href="${pageContext.request.contextPath}admin/users/list">
+        <a class="nav-link" href="/admin/users/list">
             <i class="fas fa-fw fa-tachometer-alt"></i>
             <span>Lista użytkowników</span></a>
+    </li>
+    <li class="nav-item active">
+        <a class="nav-link" href="/admin/admins/list">
+            <i class="fas fa-fw fa-tachometer-alt"></i>
+            <span>Lista administratorów</span></a>
+    </li>
+    <li class="nav-item active">
+        <a class="nav-link" href="/admin/institution/list">
+            <i class="fas fa-fw fa-tachometer-alt"></i>
+            <span>Lista instytucji</span></a>
     </li>
 
     <hr class="sidebar-divider">

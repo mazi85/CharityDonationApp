@@ -6,7 +6,6 @@
 <html lang="en">
 
 <head>
-
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -16,7 +15,7 @@
     <title>Users</title>
 
     <!-- Custom fonts for this template-->
-    <jsp:include page="fragments/css-font.jsp"/>
+    <jsp:include page="../fragments/css-font.jsp"/>
     <!-- End of Custom fonts for this template-->
 </head>
 
@@ -26,7 +25,7 @@
 <div id="wrapper">
 
     <!-- Sidebar -->
-    <jsp:include page="fragments/sideBar.jsp"/>
+    <jsp:include page="../fragments/sideBar.jsp"/>
     <!-- End of Sidebar -->
 
     <!-- Content Wrapper -->
@@ -36,7 +35,7 @@
         <div id="content">
 
             <!-- Topbar -->
-            <jsp:include page="fragments/topbar.jsp"/>
+            <jsp:include page="../fragments/topbar.jsp"/>
             <!-- End of Topbar -->
 
             <!-- Begin Page Content -->
@@ -90,20 +89,13 @@
                 </div>
                 <!-- Content Row -->
 
-
-                <!-- Content Row -->
-
-
-                <!-- Content Row -->
-
-
             </div>
             <!-- /.container-fluid -->
         </div>
         <!-- End of Main Content -->
 
         <!-- Footer -->
-        <jsp:include page="fragments/footer.jsp"/>
+        <jsp:include page="../fragments/footer.jsp"/>
         <!-- End of Footer -->
     </div>
     <!-- End of Content Wrapper -->
@@ -116,7 +108,7 @@
 </a>
 
 <!-- Bootstrap core JavaScript-->
-<jsp:include page="fragments/script.jsp"/>
+<jsp:include page="../fragments/script.jsp"/>
 <!-- End of Bootstrap core JavaScript -->
 
 </body>

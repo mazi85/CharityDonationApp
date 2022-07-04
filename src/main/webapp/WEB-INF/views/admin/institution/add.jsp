@@ -34,7 +34,7 @@
 <div id="wrapper">
 
     <!-- Sidebar -->
-    <jsp:include page="fragments/sideBar.jsp"/>
+    <jsp:include page="../fragments/sideBar.jsp"/>
     <!-- End of Sidebar -->
 
     <!-- Content Wrapper -->
