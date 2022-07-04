@@ -21,4 +21,8 @@ public interface UserService {
     void unblockUser(Long userId);
 
     List<User> allAdmins();
+
+    User editAdmin(User user);
+
+    User findAdminById(Long adminId);
 }

@@ -70,11 +70,11 @@
                             </div>
                             <div class="form-group">
                                 <label for="password">Hasło</label>
-                                <form:input type="text" class="form-control" path="password"/>
+                                <form:input type="password" class="form-control" path="password"/>
                             </div>
                             <div class="form-group">
                                 <label for="password2">Powtórz hasło</label>
-                                <input type="text" class="form-control" id="password2" name="password2"/>
+                                <input type="password" class="form-control" id="password2" name="password2"/>
                             </div>
 
                             <button type="submit" class="btn btn-primary">Dodaj</button>
