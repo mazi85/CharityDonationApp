@@ -77,7 +77,8 @@
                                         <td>
                                             <a class="btn btn-primary lift" href="${pageContext.request.contextPath}delete/${user.id}">Usuń</a>
                                             <a class="btn btn-primary lift" href="${pageContext.request.contextPath}edit/${user.id}">Edycja</a>
-                                            <a class="btn btn-primary lift" href="${pageContext.request.contextPath}admin/users/block/${user.id}">Zablokuj</a>
+                                            <a class="btn btn-primary lift" href="${pageContext.request.contextPath}block/${user.id}">Zablokuj</a>
+                                            <a class="btn btn-primary lift" href="${pageContext.request.contextPath}unblock/${user.id}">Odblokuj</a>
                                             <a class="btn btn-primary lift" href="${pageContext.request.contextPath}admin/users/editPass/${user.id}">Hasło</a>
                                         </td>
                                     </tr>

@@ -58,4 +58,18 @@ public class DefaultUserService implements UserService {
     public void deleteUser(Long userId) {
     userRepository.deleteById(userId);
     }
+
+    @Override
+    public void blockUser(Long userId) {
+        User user = findUserById(userId);
+        user.setDisable(true);
+        userRepository.save(user);
+    }
+
+    @Override
+    public void unblockUser(Long userId) {
+        User user = findUserById(userId);
+        user.setDisable(false);
+        userRepository.save(user);
+    }
 }

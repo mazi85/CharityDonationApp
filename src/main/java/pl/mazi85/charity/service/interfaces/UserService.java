@@ -15,4 +15,8 @@ public interface UserService {
     User editUser(User user);
 
     void deleteUser(Long userId);
+
+    void blockUser(Long userId);
+
+    void unblockUser(Long userId);
 }
