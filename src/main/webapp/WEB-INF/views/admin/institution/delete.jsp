@@ -45,23 +45,23 @@
 
                 <!-- Page Heading -->
                 <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                    <h1 class="h3 mb-0 text-gray-800">UsersCRUD</h1>
-                    <a href="${pageContext.request.contextPath}/users/add" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
-                            class="fas fa-download fa-sm text-white-50"></i> Dodaj użytkownika</a>
+                    <h1 class="h3 mb-0 text-gray-800">InstitutionCRUD</h1>
+                    <a href="/admin/institution/add" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
+                            class="fas fa-download fa-sm text-white-50"></i>+ Dodaj instytucję</a>
                 </div>
 
                 <div class="card shadow mb-4">
                     <div class="card-header py-3">
-                        <h6 class="m-0 font-weight-bold text-primary">Usunąć użytkownika?</h6>
+                        <h6 class="m-0 font-weight-bold text-primary">Usunąć?</h6>
                     </div>
                     <div class="card-body">
                         <div class="table-responsive">
                             <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                                 <tr>
-                                    <th>Nazwa użytkownika</th>
+                                    <th>Nazwa</th>
                                 </tr>
                                 <tr>
-                                    <td><c:out value="${username}"/></td>
+                                    <td><c:out value="${name}"/></td>
                                 </tr>
                             </table>
                         </div>

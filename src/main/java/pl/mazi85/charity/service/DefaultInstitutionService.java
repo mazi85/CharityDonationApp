@@ -29,4 +29,9 @@ public class DefaultInstitutionService implements InstitutionService {
         return institutionRepository.getById(institutionId);
     }
 
+    @Override
+    public void deleteUser(Long userId) {
+        institutionRepository.deleteById(userId);
+    }
+
 }
