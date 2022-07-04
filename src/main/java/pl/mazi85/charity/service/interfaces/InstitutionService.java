@@ -9,4 +9,7 @@ public interface InstitutionService {
     List<Institution> institutionsList();
 
 
+    Institution saveInstitution(Institution institution);
+
+    Institution findUserById(Long institutionId);
 }
