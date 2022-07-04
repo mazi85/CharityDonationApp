@@ -6,6 +6,7 @@
 <html lang="en">
 
 <head>
+
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -17,6 +18,7 @@
     <!-- Custom fonts for this template-->
     <jsp:include page="../fragments/css-font.jsp"/>
     <!-- End of Custom fonts for this template-->
+
 </head>
 
 <body id="page-top">
@@ -43,49 +45,34 @@
 
                 <!-- Page Heading -->
                 <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                    <h1 class="h3 mb-0 text-gray-800">Users</h1>
+                    <h1 class="h3 mb-0 text-gray-800">UsersCRUD</h1>
+                    <a href="${pageContext.request.contextPath}/users/add" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
+                            class="fas fa-download fa-sm text-white-50"></i> Dodaj użytkownika</a>
                 </div>
-                <!-- Table -->
+
                 <div class="card shadow mb-4">
                     <div class="card-header py-3">
-                        <h6 class="m-0 font-weight-bold text-primary">Lista użytkowników</h6>
+                        <h6 class="m-0 font-weight-bold text-primary">Usunąć użytkownika?</h6>
                     </div>
                     <div class="card-body">
                         <div class="table-responsive">
                             <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                                <thead>
                                 <tr>
-                                    <th>Id</th>
                                     <th>Nazwa użytkownika</th>
-                                    <th>Imie</th>
-                                    <th>Nazwisko</th>
-                                    <th>Zablokowany</th>
-                                    <th>Akcja</th>
                                 </tr>
-                                </thead>
-                                <tbody>
-                                <c:forEach items="${allUsers}" var="user">
-                                    <tr>
-                                        <td>${user.id}</td>
-                                        <td>${user.username}</td>
-                                        <td>${user.name}</td>
-                                        <td>${user.lastName}</td>
-                                        <td>${user.disable}</td>
-                                        <td>
-                                            <a class="btn btn-primary lift" href="${pageContext.request.contextPath}delete/${user.id}">Usuń</a>
-                                            <a class="btn btn-primary lift" href="${pageContext.request.contextPath}edit/${user.id}">Edycja</a>
-                                            <a class="btn btn-primary lift" href="${pageContext.request.contextPath}block/${user.id}">Zablokuj</a>
-                                            <a class="btn btn-primary lift" href="${pageContext.request.contextPath}unblock/${user.id}">Odblokuj</a>
-                                            <a class="btn btn-primary lift" href="${pageContext.request.contextPath}admin/users/editPass/${user.id}">Hasło</a>
-                                        </td>
-                                    </tr>
-                                </c:forEach>
-                                </tbody>
+                                <tr>
+                                    <td><c:out value="${username}"/></td>
+                                </tr>
                             </table>
                         </div>
+
+
+                        <form method="post">
+                            <button type="submit" class="btn btn-primary">USUŃ</button>
+                            <button type=button onclick="history.back()" class="btn btn-primary">ANULUJ</button>
+                        </form>
                     </div>
                 </div>
-                <!-- Content Row -->
 
             </div>
             <!-- /.container-fluid -->

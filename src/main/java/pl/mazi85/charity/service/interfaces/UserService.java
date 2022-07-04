@@ -19,4 +19,6 @@ public interface UserService {
     void blockUser(Long userId);
 
     void unblockUser(Long userId);
+
+    List<User> allAdmins();
 }

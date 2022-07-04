@@ -38,6 +38,10 @@ public class DefaultUserService implements UserService {
     public List<User> allUsers() {
         return userRepository.findAllUsersByRole("USER");
     }
+    @Override
+    public List<User> allAdmins() {
+        return userRepository.findAllUsersByRole("ADMIN");
+    }
 
     @Override
     public User findUserById(Long userId) {
@@ -72,4 +76,6 @@ public class DefaultUserService implements UserService {
         user.setDisable(false);
         userRepository.save(user);
     }
+
+
 }
