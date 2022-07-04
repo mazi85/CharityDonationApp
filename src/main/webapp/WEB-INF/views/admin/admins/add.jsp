@@ -43,22 +43,22 @@
 
                 <!-- Page Heading -->
                 <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                    <h1 class="h3 mb-0 text-gray-800">Users</h1>
-                    <a href="${pageContext.request.contextPath}admin/users/add" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
-                            class="fas fa-download fa-sm text-white-50"></i> Dodaj użytkownika</a>
+                    <h1 class="h3 mb-0 text-gray-800">Admins</h1>
+                    <a href="/admin/users/add" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
+                            class="fas fa-download fa-sm text-white-50"></i>+ Dodaj administratora</a>
                 </div>
 
                 <!-- Form -->
                 <div class="card shadow mb-4">
                     <div class="card-header py-3">
-                        <h6 class="m-0 font-weight-bold text-primary">Edytuj użytkownika</h6>
+                        <h6 class="m-0 font-weight-bold text-primary">Dodaj administratora</h6>
                     </div>
                     <div class="card-body">
-                        <form:form action="/admin/users/edit" method="post" modelAttribute="user">
+                        <form:form action="/admin/admins/add" method="post" modelAttribute="user">
 
                             <div class="form-group">
-                                <label for="username">Nazwa użytkownika</label>
-                                <form:input type="text" class="form-control" path="username"/>
+                                <label for="username">Nazwa administratora</label>
+                                <form:input type="email" class="form-control" path="username"/>
                             </div>
                             <div class="form-group">
                                 <label for="name">Imie</label>
@@ -68,10 +68,16 @@
                                 <label for="lastName">Nazwisko</label>
                                 <form:input type="text" class="form-control" path="lastName"/>
                             </div>
+                            <div class="form-group">
+                                <label for="password">Hasło</label>
+                                <form:input type="text" class="form-control" path="password"/>
+                            </div>
+                            <div class="form-group">
+                                <label for="password2">Powtórz hasło</label>
+                                <input type="text" class="form-control" id="password2" name="password2"/>
+                            </div>
 
-                            <form:input type="hidden" path="id"/>
-
-                            <button type="submit" class="btn btn-primary">Edytuj</button>
+                            <button type="submit" class="btn btn-primary">Dodaj</button>
                         </form:form>
                     </div>
                 </div>

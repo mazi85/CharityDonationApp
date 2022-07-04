@@ -72,9 +72,9 @@
                                         <td>${admin.name}</td>
                                         <td>${admin.lastName}</td>
                                         <td>
-                                            <a class="btn btn-primary lift" href="${pageContext.request.contextPath}delete/${user.id}">Usuń</a>
-                                            <a class="btn btn-primary lift" href="${pageContext.request.contextPath}edit/${user.id}">Edycja</a>
-                                            <a class="btn btn-primary lift" href="${pageContext.request.contextPath}admin/users/editPass/${user.id}">Hasło</a>
+                                            <a class="btn btn-primary lift" href="${pageContext.request.contextPath}delete/${admin.id}">Usuń</a>
+                                            <a class="btn btn-primary lift" href="${pageContext.request.contextPath}edit/${admin.id}">Edycja</a>
+                                            <a class="btn btn-primary lift" href="${pageContext.request.contextPath}admin/users/editPass/${admin.id}">Hasło</a>
                                         </td>
                                     </tr>
                                 </c:forEach>
