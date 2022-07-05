@@ -18,7 +18,7 @@ public class RegisterController {
     @GetMapping
     public String registerView (Model model) {
         model.addAttribute("user", new User());
-        return "register";
+        return "app/register";
     }
 
     @PostMapping
@@ -26,7 +26,7 @@ public class RegisterController {
                                   @RequestParam(name = "password2") String password2){
         if(password2.equals(user.getPassword())) {
             userService.createUser(user);}
-        return "redirect:form";
+        return "app/users/form";
     }
 
 

@@ -22,6 +22,6 @@ public class HomeController {
         model.addAttribute("institutions",institutionService.institutionsList());
         model.addAttribute("donationQuantity",donationService.donationQuantity());
         model.addAttribute("allItemsInDonations",donationService.allItemsInDonations());
-        return "index";
+        return "app/index";
     }
 }

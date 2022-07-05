@@ -1,6 +1,3 @@
-<%--
-  wg template Michała
---%>
 <%@ page isELIgnored="false" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
@@ -12,18 +9,18 @@
 <!DOCTYPE html>
 <html lang="pl">
 <%--head--%>
-<jsp:include page="fragments/head.jsp"/>
+<jsp:include page="../fragments/head.jsp"/>
 <%--end of head--%>
 
 <body>
 <header class="header--form-page">
     <nav class="container container--70">
         <%--logged-menu--%>
-        <jsp:include page="fragments/logged-menu.jsp"/>
+        <jsp:include page="../fragments/logged-menu.jsp"/>
         <%--end of logged-menu--%>
 
         <%--upperMenu--%>
-        <jsp:include page="fragments/upperMenu.jsp"/>
+        <jsp:include page="../fragments/upperMenu.jsp"/>
         <%--end of upperMenu--%>
     </nav>
 
@@ -246,11 +243,11 @@
 </section>
 
 <%--footer--%>
-<jsp:include page="fragments/footer.jsp"/>
+<jsp:include page="../fragments/footer.jsp"/>
 <%--end of footer--%>
 
 <%--script--%>
-<jsp:include page="fragments/script.jsp"/>
+<jsp:include page="../fragments/script.jsp"/>
 <%--end of script--%>
 </body>
 </html>

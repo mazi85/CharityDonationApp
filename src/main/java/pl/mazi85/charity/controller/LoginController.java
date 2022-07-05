@@ -11,7 +11,7 @@ public class LoginController {
 
     @GetMapping
     public String registerView () {
-        return "login";
+        return "app/login";
     }
 
 }
