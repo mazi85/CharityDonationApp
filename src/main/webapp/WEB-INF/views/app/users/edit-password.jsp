@@ -22,27 +22,21 @@
 </header>
 
 <section class="login-page">
-    <h2>Załóż konto</h2>
+    <h2>Zmień hasło</h2>
     <form:form modelAttribute="user">
+
         <div class="form-group">
-            <form:input path = "name" placeholder="Imie" />
-        </div>
-        <div class="form-group">
-            <form:input path = "lastName" placeholder="Nazwisko" />
-        </div>
-        <div class="form-group">
-            <form:input path = "username" type="email" placeholder="Email" />
-        </div>
-        <div class="form-group">
-            <form:input path="password" placeholder="Hasło" />
+            <form:input type="password" path="password" placeholder="Hasło" />
         </div>
         <div class="form-group">
             <input type="password" name="password2" placeholder="Powtórz hasło" value="${user.password}" />
         </div>
 
+        <form:hidden path = "id"/>
+
         <div class="form-group form-group--buttons">
-            <a href="<c:url value="/login"/>" class="btn btn--without-border">Zaloguj się</a>
-            <button class="btn" type="submit">Załóż konto</button>
+
+            <button class="btn" type="submit">Edytuj</button>
         </div>
     </form:form>
 </section>

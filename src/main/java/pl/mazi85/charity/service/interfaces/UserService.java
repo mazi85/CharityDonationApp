@@ -25,4 +25,8 @@ public interface UserService {
     User editAdmin(User user);
 
     User findAdminById(Long adminId);
+
+    User getUserByUsername(String username);
+
+    void editUserPassword(User user);
 }

@@ -56,6 +56,18 @@ public class DefaultUserService implements UserService {
     }
 
     @Override
+    public User getUserByUsername(String username) {
+        return userRepository.findByUsername(username).orElseThrow();
+    }
+
+    @Override
+    public void editUserPassword(User user) {
+        User userForEdit = findUserById(user.getId());
+        userForEdit.setPassword(passwordEncoder.encode(user.getPassword()));
+        userRepository.save(userForEdit);
+    }
+
+    @Override
     public User findUserById(Long userId) {
         return userRepository.getById(userId);
     }
