@@ -47,12 +47,12 @@
                         </td>
                 <td class="tg-x1hj">
                 <c:if test="${donation.received}">
-                    ${donation.pickUpDate}
+                    ${donation.updatedOn.toLocalDate()}
                 </c:if>
                 </td>
 
                 <td class="tg-x1hj">
-                    <a href="/user/donation/details" class="btn btn--small btn--without-border reset-password">Szczegóły</a>
+                    <a href="/user/donation/details/${donation.id}" class="btn btn--small btn--without-border reset-password">Szczegóły</a>
                 </td>
             </tr>
 

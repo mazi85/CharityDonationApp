@@ -38,4 +38,16 @@ public class DefaultDonationService implements DonationService {
         return donationRepository
                 .findAllByUser_usernameOrderByReceivedDescUpdatedOnDescCreatedOnDesc(username) ;
     }
+
+    @Override
+    public Donation getDonationById(Long donationId) {
+        return donationRepository.getById(donationId);
+    }
+
+    @Override
+    public void acceptReceive(Long donationId) {
+        Donation donation = donationRepository.getById(donationId);
+        donation.setReceived(true);
+        donationRepository.save(donation);
+    }
 }

@@ -12,4 +12,8 @@ public interface DonationService {
     Donation saveDonation(Donation donation, String username);
 
     List<Donation> getAllCurrentUserDonationsOrdered(String username);
+
+    Donation getDonationById(Long donationId);
+
+    void acceptReceive(Long donationId);
 }
