@@ -8,7 +8,7 @@
         Witaj <sec:authentication property="principal.username"/>
         <ul class="dropdown">
             <li><a href="<c:url value="/user/form"/> ">Dodaj zbiórkę</a></li>
-            <li><a href="<c:url value="/user/my-donation"/>">Moje zbiórki</a></li>
+            <li><a href="<c:url value="/user/donation/list"/>">Moje zbiórki</a></li>
             <li><a href="<c:url value="/user/profile"/> ">Profil</a></li>
             <li><a href="<c:url value="/user/edit-password"/> ">Edytuj hasło</a></li>
             <li><a href="<c:url value="/logout"/> ">Wyloguj</a></li>

@@ -18,7 +18,7 @@ import pl.mazi85.charity.service.interfaces.InstitutionService;
 @RequiredArgsConstructor
 @Slf4j
 @RequestMapping("/user/form")
-public class DonationController {
+public class UserAddDonationController {
 
     private final CategoryService categoryService;
     private final InstitutionService institutionService;
@@ -38,7 +38,8 @@ public class DonationController {
     @PostMapping
     public String fromFilled(@ModelAttribute(name = "donation") Donation donation, Model model) {
         log.info("{}", donation);
-        Donation savedDonation = donationService.saveDonation(donation);
+        String username = SecurityContextHolder.getContext().getAuthentication().getName();
+        Donation savedDonation = donationService.saveDonation(donation,username);
         model.addAttribute("donation",savedDonation);
         return "app/users/form-confirmation";
 

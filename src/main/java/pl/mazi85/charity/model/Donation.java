@@ -8,7 +8,9 @@ import lombok.ToString;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
+import java.time.Clock;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.time.LocalTime;
 import java.util.List;
 
@@ -38,6 +40,21 @@ public class Donation {
     private LocalDate pickUpDate;
     private LocalTime pickUpTime;
     private String pickUpComment;
+    private boolean received;
+    @Column(name = "created_on",updatable = false)
+    private LocalDateTime createdOn;
+    @Column(name = "updated_on")
+    private LocalDateTime updatedOn;
+
+    @PrePersist
+    public void prePersist() {
+        createdOn = LocalDateTime.now(Clock.systemUTC());
+    }
+
+    @PreUpdate
+    public void preUpdate() {
+        updatedOn = LocalDateTime.now(Clock.systemUTC());
+    }
     @ManyToOne
     private User user;
 
