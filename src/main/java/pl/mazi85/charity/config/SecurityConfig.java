@@ -1,5 +1,6 @@
 package pl.mazi85.charity.config;
 
+import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
@@ -11,27 +12,17 @@ import org.springframework.security.web.authentication.AuthenticationSuccessHand
 import pl.mazi85.charity.service.AuthService;
 
 @Configuration
+@RequiredArgsConstructor
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
-    @Bean
-    public PasswordEncoder passwordEncoder(){
-        return PasswordEncoderFactories.createDelegatingPasswordEncoder();
-    }
-    @Bean
-    public AuthService authService(){
-        return new AuthService();
-    }
-
-    @Bean
-    public AuthenticationSuccessHandler myAuthenticationSuccessHandler(){
-        return new MySimpleUrlAuthenticationSuccessHandler();
-    }
-
+    private final PasswordEncoder passwordEncoder;
+    private final AuthService authService;
+    private final AuthenticationSuccessHandler myAuthenticationSuccessHandler;
 
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-        auth.userDetailsService(authService())
-                .passwordEncoder(passwordEncoder());
+        auth.userDetailsService(authService)
+                .passwordEncoder(passwordEncoder);
 
     }
 
@@ -46,7 +37,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .and()
                 .formLogin()
                     .loginPage("/login")
-                    .successHandler(myAuthenticationSuccessHandler())
+                    .successHandler(myAuthenticationSuccessHandler)
                 .and()
                 .logout()
                     .logoutUrl("/logout").permitAll();
