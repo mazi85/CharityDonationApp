@@ -19,9 +19,14 @@ public class DefaultTokenService implements TokenService {
     public Token createRegisterTokenForUser(User user) {
         UUID uuid = UUID.randomUUID();
         Token token = Token.builder().
-                uuid(uuid).
+                uuid(uuid.toString()).
                 user(user).
                 build();
         return tokenRepository.save(token);
+    }
+
+    @Override
+    public Token findTokenByUuid(String uuid) {
+        return tokenRepository.findTokenByUuidOrderByCreatedOnDesc(uuid);
     }
 }

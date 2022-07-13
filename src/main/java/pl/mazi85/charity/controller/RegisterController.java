@@ -37,7 +37,6 @@ public class RegisterController {
             emailService.sendTokenMessage(user.getUsername(),registerTokenForUser.getUuid());
             }
         else{
-            //model.addAttribute("user", user);
             return "app/register";
         }
         return "redirect:/register/confirmation";
@@ -51,8 +50,13 @@ public class RegisterController {
 
     @GetMapping
     @RequestMapping("/confirmation/{uuid}")
-    public String registerConfirmation(@PathVariable UUID uuid) {
+    public String registerConfirmation(@PathVariable String uuid) {
+        Token token = tokenService.findTokenByUuid(uuid);
+        if(token!=null){
+            userService.unblockUser(token.getUser().getId());
+        }
         return "redirect:/login";
+
     }
 
 

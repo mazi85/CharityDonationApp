@@ -22,9 +22,11 @@ public class AuthService implements UserDetailsService {
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-        return userRepository.findByUsername(username)
-                .map(user -> new User(user.getUsername(), user.getPassword(),
+        User userDetails = userRepository.findByUsername(username)
+                .map(user -> new User(user.getUsername(), user.getPassword(),user.getEnabled(),true,true,true,
                         List.of(new SimpleGrantedAuthority(user.getRole()))))
                 .orElseThrow(() -> new UsernameNotFoundException("No user with username " + username));
+        return userDetails;
     }
+
 }

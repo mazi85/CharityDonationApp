@@ -88,14 +88,14 @@ public class DefaultUserService implements UserService {
     @Override
     public void blockUser(Long userId) {
         User user = findUserById(userId);
-        user.setDisable(true);
+        user.setEnabled(false);
         userRepository.save(user);
     }
 
     @Override
     public void unblockUser(Long userId) {
         User user = findUserById(userId);
-        user.setDisable(false);
+        user.setEnabled(true);
         userRepository.save(user);
     }
 

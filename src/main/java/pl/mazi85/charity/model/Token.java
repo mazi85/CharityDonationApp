@@ -16,7 +16,7 @@ public class Token {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private UUID uuid;
+    private String uuid;
     @ManyToOne
     private User user;
     private LocalDateTime createdOn;

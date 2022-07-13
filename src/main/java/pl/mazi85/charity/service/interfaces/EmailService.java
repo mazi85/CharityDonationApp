@@ -6,5 +6,5 @@ public interface EmailService {
 
      void sendSimpleMessage(String to, String subject, String text);
 
-    void sendTokenMessage(String username, UUID uuid);
+    void sendTokenMessage(String username, String uuid);
 }

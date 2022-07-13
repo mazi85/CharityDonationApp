@@ -7,4 +7,6 @@ import java.util.UUID;
 
 public interface TokenService {
     Token createRegisterTokenForUser(User user);
+
+    Token findTokenByUuid(String uuid);
 }

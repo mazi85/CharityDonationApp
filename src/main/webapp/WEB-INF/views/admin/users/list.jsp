@@ -70,7 +70,7 @@
                                         <td>${user.username}</td>
                                         <td>${user.name}</td>
                                         <td>${user.lastName}</td>
-                                        <td>${user.disable}</td>
+                                        <td>${user.enabled}</td>
                                         <td>
                                             <a class="btn btn-primary lift" href="${pageContext.request.contextPath}delete/${user.id}">Usuń</a>
                                             <a class="btn btn-primary lift" href="${pageContext.request.contextPath}edit/${user.id}">Edycja</a>

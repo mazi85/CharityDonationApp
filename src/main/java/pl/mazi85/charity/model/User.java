@@ -23,9 +23,8 @@ public class User {
     private String password;
     private String role;
     @Column(columnDefinition = "boolean default false")
-    private Boolean disable=false;
-    @Column(columnDefinition = "boolean default false")
-    private Boolean active=false;
+    private Boolean enabled=false;
+
 
 
 
