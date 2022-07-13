@@ -21,7 +21,6 @@ public class DefaultUserService implements UserService {
     @Override
     public User createUser(User user) {
         user.setPassword(passwordEncoder.encode(user.getPassword()));
-        user.setDisable(false);
         user.setRole("USER");
         return userRepository.save(user);
     }
@@ -29,7 +28,6 @@ public class DefaultUserService implements UserService {
     @Override
     public User createAdmin(User user) {
         user.setPassword(passwordEncoder.encode(user.getPassword()));
-        user.setDisable(false);
         user.setRole("ADMIN");
         return userRepository.save(user);
     }

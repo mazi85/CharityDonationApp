@@ -22,7 +22,11 @@ public class User {
     @Column(nullable = false)
     private String password;
     private String role;
-    private Boolean disable;
+    @Column(columnDefinition = "boolean default false")
+    private Boolean disable=false;
+    @Column(columnDefinition = "boolean default false")
+    private Boolean active=false;
+
 
 
 }

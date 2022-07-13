@@ -19,11 +19,20 @@ public class EmailServiceDefault implements EmailService {
     public void sendSimpleMessage(
             String to, String subject, String text) {
         SimpleMailMessage message = new SimpleMailMessage();
-        UUID uuid = UUID.randomUUID();
-        message.setFrom("");
+        message.setFrom("muzy1125@gmail.com");//set Your email
         message.setTo(to);
         message.setSubject(subject);
         message.setText(text);
+        emailSender.send(message);
+    }
+
+    @Override
+    public void sendTokenMessage(String username, UUID uuid) {
+        SimpleMailMessage message = new SimpleMailMessage();
+        message.setFrom("");//set Your email
+        message.setTo(username);
+        message.setSubject("Witaj w DonityApp. Link aktywacyjny");
+        message.setText("http://localhost:8080/register/confirmation/"+ uuid.toString());
         emailSender.send(message);
     }
 
